@@ -1,0 +1,14 @@
+<!-- BEGIN: postsByTag.html -->
+<div class="postsByTag">
+    <h3>Post Categories</h3>
+    {{ $tags := .Site.Taxonomies.tags }}
+    {{ range $tag, $posts := $tags }}
+        <h3>{{ $tag }}</h3>
+        <ul>
+            {{ range $posts }}
+                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    {{ end }}
+</div>
+<!-- END: postsByTag.html -->
